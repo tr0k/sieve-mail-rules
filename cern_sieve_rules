@@ -8,7 +8,7 @@ require ["fileinto"];
 # rule:[ai-hadoop]
 if anyof (address :is "to" ["ai-hadoop-admins@cern.ch", "ai-hadoop-admin@cern.ch"], address :matches :all "to" ["root@ithdp*", "root@p0*", "root@itrac*"])
 {
-    fileinto "ai-hadoop";
+   fileinto "ai-hadoop";
 }
 
 # rule:[CERN-JIRA]
@@ -26,11 +26,17 @@ if address :is "from" ["polish-at-cern-travel@cern.ch", "polish-at-cern-discuss@
 # rule:[Account Management Service]
 if address :is "from" "account-management.service@cern.ch"
 {
-	fileinto "Account Management Service";
+   fileinto "Account Management Service";
 }
 
 # rule:[CERN GitLab]
 if header :matches "from" "CERN GitLab*"
 {
-        fileinto "CERN Gitlab";
+   fileinto "CERN Gitlab";
+}
+
+# rule:[CERN Service Desk]
+if address :is "from" ["noreply-service-desk@cern.ch", "service-desk@cern.ch"]
+{
+   fileinto "Service Desk";
 }
