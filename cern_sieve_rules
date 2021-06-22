@@ -1,0 +1,36 @@
+/*
+CERN-specific rules.
+Guide to write the new rules: https://p5r.uk/blog/2011/sieve-tutorial.html
+*/
+
+require ["fileinto"];
+
+# rule:[ai-hadoop]
+if anyof (address :is "to" ["ai-hadoop-admins@cern.ch", "ai-hadoop-admin@cern.ch"], address :matches :all "to" ["root@ithdp*", "root@p0*", "root@itrac*"])
+{
+    fileinto "ai-hadoop";
+}
+
+# rule:[CERN-JIRA]
+if header :matches "subject" ["[CERN-JIRA]*"]
+{
+   fileinto "CERN-JIRA";
+}
+
+# rule:[Polish-at-cern]
+if address :is "from" ["polish-at-cern-travel@cern.ch", "polish-at-cern-discuss@cern.ch", "polish-at-cern@cern.ch"]
+{
+   fileinto "Polish-at-cern";
+}
+
+# rule:[Account Management Service]
+if address :is "from" "account-management.service@cern.ch"
+{
+	fileinto "Account Management Service";
+}
+
+# rule:[CERN GitLab]
+if header :matches "from" "CERN GitLab*"
+{
+        fileinto "CERN Gitlab";
+}
