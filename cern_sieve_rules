@@ -20,7 +20,7 @@ if header :matches "subject" ["[CERN-JIRA]*"]
 # rule:[Polish-at-cern]
 if address :is "from" ["polish-at-cern-travel@cern.ch", "polish-at-cern-discuss@cern.ch", "polish-at-cern@cern.ch"]
 {
-   fileinto "Polish-at-cern";
+   fileinto "INBOX/Polish-at-cern";
 }
 
 # rule:[Account Management Service]
@@ -38,5 +38,5 @@ if header :matches "from" "CERN GitLab*"
 # rule:[CERN Service Desk]
 if address :is "from" ["noreply-service-desk@cern.ch", "service-desk@cern.ch"]
 {
-   fileinto "Service Desk";
+   fileinto "INBOX/Service Desk";
 }
