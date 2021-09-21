@@ -40,3 +40,8 @@ if address :is "from" ["noreply-service-desk@cern.ch", "service-desk@cern.ch"]
 {
    fileinto "INBOX/Service Desk";
 }
+# rule:[Personal Accounting]
+if address :is "from" ["service-personnel-accounting@cern.ch","noreply-alerting@ubs.com"]
+{
+	fileinto "INBOX/Personal Accounting";
+}
