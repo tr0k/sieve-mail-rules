@@ -46,3 +46,9 @@ if address :is "from" ["service-personnel-accounting@cern.ch","noreply-alerting@
 {
 	fileinto "INBOX/Personal Accounting";
 }
+
+# rule:[TSM Monitor]
+if address :is "from" ["tsmms@cern.ch"]
+{
+	fileinto "TSM Monitor";
+}
