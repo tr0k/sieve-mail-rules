@@ -2,6 +2,7 @@
 CERN-specific rules.
 Guide to write the new rules: https://p5r.uk/blog/2011/sieve-tutorial.html
 Can be added in https://mmmm.web.cern.ch/?_task=settings&_action=plugin.managesieve#
+The rules can be applied from https://cernmail.cern.ch/appsuite/#!!&app=io.ox/settings&folder=virtual/settings/io.ox/mailfilter (or will be synced in some time)
 */
 
 require ["fileinto"];
