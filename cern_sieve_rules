@@ -14,7 +14,7 @@ if anyof (address :is "to" ["ai-hadoop-admins@cern.ch", "ai-hadoop-admin@cern.ch
 }
 
 # rule:[it-opensearch-experts cron]
-if anyof (address :is "from" ["it-opensearch-experts@cern.ch"], address :matches "to" ["root@esperfmon*"])
+if anyof (address :is "from" "it-opensearch-experts@cern.ch", header :matches "resent-from" "<it-opensearch-experts@cern.ch>")
 {
 	fileinto "opensearch-experts";
 }
