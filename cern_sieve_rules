@@ -1,6 +1,7 @@
 /*
 CERN-specific rules.
 Guide to write the new rules: https://p5r.uk/blog/2011/sieve-tutorial.html
+Can be added in https://mmmm.web.cern.ch/?_task=settings&_action=plugin.managesieve#
 */
 
 require ["fileinto"];
@@ -9,6 +10,12 @@ require ["fileinto"];
 if anyof (address :is "to" ["ai-hadoop-admins@cern.ch", "ai-hadoop-admin@cern.ch"], address :matches :all "to" ["root@ithdp*", "root@p0*", "root@itrac*"])
 {
    fileinto "ai-hadoop";
+}
+
+# rule:[it-opensearch-experts cron]
+if anyof (address :is "from" ["it-opensearch-experts@cern.ch"], address :matches "to" ["root@esperfmon*"])
+{
+	fileinto "opensearch-experts";
 }
 
 # rule:[CERN-JIRA]
